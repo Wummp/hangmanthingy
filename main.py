@@ -3,6 +3,7 @@ import pickle
 # variables
 menueingabe = ""
 setupeingabe = ""
+wortliste = []
 
 
 # functions
@@ -16,9 +17,6 @@ def setup():
     setupeingabe = input("SETUP: Gebe ein Wort ein, dass zur Liste hinzugefügt werden soll. START zum Starten. END um zum Menu zurückzukehren. ").lower()
 
 # main
-
-with open("wortliste.pkl", "rb") as f:
-    wortliste = pickle.load(f)
 
 print("Willkommen. ")
 while True:
@@ -45,8 +43,6 @@ while True:
                         for item in wortliste:
                             print("- " + item)
                             continue
-                        with open("wortliste.pkl", "wb") as f:
-                            pickle.dump(wortliste,f)
                         continue
         case _:
             print("Bitte nur 1 oder 2 eingeben.")
